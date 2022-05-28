@@ -1,0 +1,57 @@
+@use '@angular/cdk';
+@include cdk.a11y-visually-hidden();
+
+:host {
+  display: block;
+}
+
+label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  // STYLE
+
+  &:hover span {
+    // STYLE
+    background-color: lightyellow;
+  }
+}
+
+span {
+
+
+  // STYLE
+  width: 19px;
+  height: 19px;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin-right: 12px;
+
+  &:hover {
+    // STYLE
+    background-color: orange !important;
+  }
+}
+
+input:focus-visible~span {
+
+  // STYLE
+  border-width: 2px;
+}
+
+// Checked
+input:checked~span {
+  
+  // STYLE
+  
+  background-color: green;
+  &::after {content: 'x';}
+}
+
+input:disabled~span {
+  
+  // STYLE
+  background-color: lightgrey;
+  border-color: gray;
+}

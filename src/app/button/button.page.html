@@ -1,0 +1,16 @@
+<label>
+  Content
+  <input type="text" [(ngModel)]="content">
+</label>
+<label>
+  Disabled
+  <input type="checkbox" [(ngModel)]="disabled">
+</label>
+
+
+<cb-button [disabled]="disabled" (click)="emit('clicked', $event)" (cbClick)="emit('cbClicked', $event)">{{ content }}</cb-button>
+
+
+<div *ngFor="let log of logs">
+  {{ log.msg }} {{ log.event | json }}
+</div>

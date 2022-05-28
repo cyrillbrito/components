@@ -1,0 +1,33 @@
+:host {
+  display: block;
+}
+
+button {
+  cursor: pointer;
+
+  // STYLE
+  border-radius: 100px;
+  border: none;
+  background: lightblue;
+  font-weight: bold;
+  padding: 10px;
+
+  &:disabled {
+    cursor: default;
+
+    // STYLE
+    color: gray;
+  }
+
+  &:focus-visible {
+
+    // STYLE
+    background-color: cyan;
+  }
+
+  &:hover {
+
+    // STYLE
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,38 @@
+name: Build and Deploy
+
+on: [push]
+
+# Required because of the pages deploy
+permissions: 
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Setup Node 16 🔧
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
+
+      - name: Install npm dependencies ⏬
+        run: npm ci
+
+      - name: Build angular 🔨
+        run: npm run build
+
+      # - name: Archive build artifacts
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: build-artifacts
+      #     path: dist/ng14/
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          branch: gh-pages
+          folder: dist/ng14

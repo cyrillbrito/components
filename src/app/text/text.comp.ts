@@ -4,14 +4,14 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { wrapperValueAccessor } from '../value-accessor';
 
 @Component({
-  selector: 'cb-checkbox',
+  selector: 'cb-text',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
-  templateUrl: './checkbox.comp.html',
-  styleUrls: ['./checkbox.comp.scss'],
+  templateUrl: './text.comp.html',
+  styleUrls: ['./text.comp.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CheckboxComponent implements OnInit {
+export class TextComponent implements OnInit {
 
   control: FormControl;
 

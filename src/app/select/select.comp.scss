@@ -1,0 +1,71 @@
+:host {
+  display: block;
+
+  &.ng-touched.ng-invalid .select {
+    border-color: orange;
+  }
+
+  &.disabled {
+    //STYLE
+    pointer-events: none;
+
+    .select {
+      background-color: lightgrey;
+      border-color: gray;
+      color: gray;
+    }
+  }
+}
+
+.select {
+  cursor: pointer;
+  outline: none;
+
+  // STYLE
+  outline: none;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:hover,
+  &.open {
+    // STYLE
+    border-width: 2px;
+    margin: -1px;
+  }
+
+  &:focus-visible {
+    // STYLE
+    border-width: 2px;
+    margin: -1px;
+    border-style: dashed;
+  }
+}
+
+.options {
+  width: 100%;
+  background: white;
+
+  // STYLE
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.option {
+  // STYLE
+  padding: 10px;
+
+  &.selected {
+    // STYLE
+    background-color: lightgray;
+    font-weight: bold;
+  }
+
+  &:hover {
+    // STYLE
+    background-color: lightgray;
+  }
+}

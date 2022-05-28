@@ -1,4 +1,4 @@
-import { InjectFlags, inject } from "@angular/core";
+import { InjectFlags, Injector } from "@angular/core";
 import { FormControl, NgControl, FormControlName, FormGroupDirective, FormControlDirective, NgModel, ControlValueAccessor } from "@angular/forms";
 
 
@@ -10,9 +10,9 @@ import { FormControl, NgControl, FormControlName, FormGroupDirective, FormContro
  * 
  * https://stackoverflow.com/questions/47377411/wrapping-a-formcontrol-in-angular-2
  */
-export function wrapperValueAccessor(): FormControl {
+export function wrapperValueAccessor(injector: Injector): FormControl {
 
-  const ngControl = inject(NgControl, InjectFlags.Self + InjectFlags.Optional);
+  const ngControl = injector.get(NgControl, null, InjectFlags.Self + InjectFlags.Optional);
 
   if (ngControl != null) {
     ngControl.valueAccessor = EMPTY_VALUE_ACCESSOR;

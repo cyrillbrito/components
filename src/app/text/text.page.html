@@ -1,7 +1,7 @@
 
 <label>
   Content
-  <input type="text" [(ngModel)]="checked">
+  <input type="text" [(ngModel)]="content">
 </label>
 <label>
   Disabled
@@ -10,7 +10,7 @@
 
 
 
-<cb-checkbox [(ngModel)]="checked" (ngModelChange)="emit('change', $event)" [disabled]="disabled">Helo 123</cb-checkbox>
+<cb-text [(ngModel)]="content" (ngModelChange)="emit('change', $event)" [disabled]="disabled" required>Helo 123</cb-text>
 
 
 <div *ngFor="let log of logs">

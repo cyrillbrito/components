@@ -23,7 +23,7 @@ jobs:
         run: npm ci
 
       - name: Build angular 🔨
-        run: npm run build
+        run: npm run build-gh
 
       # - name: Archive build artifacts
       #   uses: actions/upload-artifact@v3

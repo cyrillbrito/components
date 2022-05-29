@@ -4,18 +4,16 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { wrapperValueAccessor } from '../value-accessor';
 
 @Component({
-  selector: 'cb-text',
+  selector: 'cb-text-input',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
-  templateUrl: './text.comp.html',
-  styleUrls: ['./text.comp.scss'],
+  imports: [ReactiveFormsModule],
+  templateUrl: './text-input.comp.html',
+  styleUrls: ['./text-input.comp.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TextComponent implements OnInit {
+export class TextInputComponent implements OnInit {
 
   control: FormControl;
-
-  @HostBinding('class.disabled') get disabled() { return this.control.disabled }
 
   constructor(private injector: Injector) { }
 

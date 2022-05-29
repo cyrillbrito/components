@@ -1,20 +1,26 @@
-import { Story, Meta } from '@storybook/angular/types-6-0';
+import { Story, Meta } from '@storybook/angular';
 import { ButtonComponent } from './button.comp';
 
 
 export default {
-  title: 'ButtonComp',
+  title: 'Button',
   component: ButtonComponent,
 } as Meta;
 
 
-const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
+const Template: Story<{ label: string, disabled: boolean }> = args => ({
   props: args,
-  template: '<cb-button>Ola</cb-button>'
+  template: '<cb-button [disabled]="disabled">{{ label }}</cb-button>'
 });
 
 export const Primary = Template.bind({});
 Primary.args = {
-  // primary: true,
-  // label: 'Button',
+  label: 'Primary button'
+};
+
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  label: 'Disabled button',
+  disabled: true,
 };

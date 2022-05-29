@@ -1,0 +1,32 @@
+:host {
+  display: block;
+}
+
+input {
+  outline: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+
+  &:disabled {
+    background-color: lightgray;
+    border-color: gray;
+    color: gray;
+  }
+
+  &:focus-visible {
+    border-style: dashed;
+    border-width: 2px;
+    margin: -1px;
+  }
+
+  &:not(:disabled):hover {
+    border-width: 2px;
+    margin: -1px;
+  }
+
+  &.ng-touched.ng-invalid {
+    border-color: orangered;
+    background-color: lightyellow;
+  }
+}

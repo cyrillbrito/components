@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ButtonComponent } from '../button/button.comp';
 import { CheckboxComponent } from '../checkbox/checkbox.comp';
-import { TextComponent } from '../text/text.comp';
+import { TextInputComponent } from '../text-input/text-input.comp';
 
 @Component({
   selector: 'app-reactive',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, TextComponent, ButtonComponent, CheckboxComponent],
+  imports: [CommonModule, ReactiveFormsModule, TextInputComponent, ButtonComponent, CheckboxComponent],
   templateUrl: './reactive.page.html',
   styleUrls: ['./reactive.page.scss']
 })

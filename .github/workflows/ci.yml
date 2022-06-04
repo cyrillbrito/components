@@ -22,8 +22,8 @@ jobs:
       - name: Install npm dependencies ⏬
         run: npm ci
 
-      - name: Build angular 🔨
-        run: npm run build-gh
+      - name: Build storybook 🔨
+        run: npm run build-storybook
 
       # - name: Archive build artifacts
       #   uses: actions/upload-artifact@v3
@@ -35,4 +35,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
           branch: gh-pages
-          folder: dist/ng14
+          folder: storybook-static

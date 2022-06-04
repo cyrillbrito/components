@@ -4,30 +4,26 @@
 
 button {
   cursor: pointer;
-
-  // STYLE
+  outline: none;
+  border: 1px solid black;
   border-radius: 100px;
-  border: none;
-  background: lightblue;
-  font-weight: bold;
   padding: 10px;
 
   &:disabled {
     cursor: default;
-
-    // STYLE
+    background-color: lightgray;
+    border-color: gray;
     color: gray;
   }
 
   &:focus-visible {
-
-    // STYLE
-    background-color: cyan;
+    border-style: dashed;
+    border-width: 2px;
+    margin: -1px;
   }
 
-  &:hover {
-
-    // STYLE
-    font-size: 14px;
+  &:not(:disabled):hover {
+    border-width: 2px;
+    margin: -1px;
   }
 }

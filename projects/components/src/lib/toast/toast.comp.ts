@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, HostBinding, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, HostBinding, Input, Output } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { trigger, style, transition, animate } from '@angular/animations';
 import { ButtonComponent } from '../button/button.comp';
@@ -26,7 +26,7 @@ import { ButtonComponent } from '../button/button.comp';
   // },
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ToastComponent implements OnInit {
+export class ToastComponent {
 
   @Input() type: 'success' | 'error';
   @Input() text: string;
@@ -34,10 +34,5 @@ export class ToastComponent implements OnInit {
   @Output() closed = new EventEmitter<void>();
 
   @HostBinding('@enterLeave') enterLeave = true;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
